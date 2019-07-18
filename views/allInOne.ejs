@@ -1,0 +1,100 @@
+<%- include layouts/head.ejs %>
+<style>
+    #ddd {
+        display: block;
+        padding: 9.5px;
+        margin: 0 0 10px;
+        font-size: 13px;
+        line-height: 1.428571429;
+        color: #333;
+        word-break: break-all;
+        word-wrap: break-word;
+        background-color: #f5f5f5;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+</style>
+<h1>All in one</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="well well-lg">
+                <div class="media1">
+                    <div class="media-body">
+                        <form action="/minifi" method="post" name="minifi">
+                            <table border="1">
+                                <div class="form-group" style="padding:10px;">
+                                    <textarea id="userContent" name="userContent" class="form-control animated"
+                                        placeholder="Your content here..."></textarea>
+                            </table>
+                            <table cellpadding="10">
+                                <tr>
+                                    <td>
+                                        <div class="col-lg-3">
+                                            <button name="textminifi" style="display: inline-block;vertical-align: top;"
+                                                class="btn btn-info " style="margin-top:10px" value="minify"
+                                                type="submit">MinifyHTML</button>
+
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="col-lg-3"> <button name="textminifijs"
+                                                style="display: inline-block;vertical-align: top;" class="btn btn-info "
+                                                style="margin-top:10px" value="minifyJS" type="submit">MinifyJS</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="col-lg-3">
+                                            <button name="jsonBeautify"
+                                                style="display: inline-block;vertical-align: top;" class="btn btn-info "
+                                                style="margin-top:10px" value="jsonbeautify" type="submit">JS
+                                                beautify</button>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                                <br>
+                                <tr>
+                                    <td>
+                                        <div class="col-lg-3">
+                                            <button name="htmlBeautify"
+                                                style="display: inline-block;vertical-align: top;" class="btn btn-info "
+                                                style="margin-top:10px" value="beautify" type="submit">HTML/XML
+                                                beautify</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="col-lg-3">
+                                            <button name="removeSpl" style="display: inline-block;vertical-align: top;"
+                                                class="btn btn-info " style="margin-top:10px" value="charSpecial"
+                                                data-toggle="tooltip" title="like &;gt; &;lt; \''  \n"
+                                                type="submit">Remove-Spl-Char</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="col-lg-3">
+                                            <button name="clear" style="display: inline-block;vertical-align: top;"
+                                                class="btn btn-info " style="margin-top:10px" value="charSpecial"
+                                                data-toggle="tooltip" title="clear all'  \n"
+                                                type="submit">Clear</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div style="margin:100px;word-wrap:break-word;width:90%;height:auto;">
+        <pre id="ddd">
+            <%= result %>
+        </pre>
+        <pre contenteditable="true"><%= beauty %></pre>
+    </div>
+</div>
+<%- include layouts/footer.ejs %>

@@ -1,0 +1,12 @@
+version: '2.1'
+
+services:
+  utitlity:
+    image: imagenamehere:latest
+    build: .
+    environment:
+      NODE_ENV: develop
+      PORT: 3000
+      MIME_TYPE: "text/xml"      
+    ports:
+      - 3000:3000
